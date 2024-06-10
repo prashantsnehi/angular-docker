@@ -2,6 +2,7 @@ version: '3'
 services:
   angular-app:
     image: psnehi/angular-docker:v4
+    restart: always
     build:
       context: .
       dockerfile: Dockerfile.dev
