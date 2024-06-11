@@ -9,6 +9,15 @@ services:
     ports:
       - '4200:4200'
     volumes:
-      - /app/node_modules
-      - .:/app
-  
+      - /home/node/app/node_modules
+      - .:/home/node/app
+    command: ["npm", "run", "test"]
+  tests:
+    stdin_open: true
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /home/node/app/node_modules
+      - .:/home/node/app
+    command: ["npm", "run", "test"]
