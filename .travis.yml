@@ -5,6 +5,9 @@ services:
 before_install: 
   - docker build -t psnehi/angular-docker:latest -f Dockerfile .
 
+script:
+  - docker run -e CI=true stephengrider/docker-react npm run test
+
 deploy:
   provider: elasticbeanstalk
   region: "us-east-1"

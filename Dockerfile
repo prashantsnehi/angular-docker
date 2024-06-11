@@ -8,6 +8,7 @@ RUN npm install
 RUN ng build
 
 FROM nginx
+EXPOSE 80
 RUN rm /usr/share/nginx/html/index.html
 COPY --from=builder /app/dist/frontend /usr/share/nginx/html
 
