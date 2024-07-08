@@ -1,7 +1,7 @@
 version: '3'
 services:
   angular-app:
-    image: psnehi/angular-docker:v4
+    image: psnehi/angular-docker:v9
     restart: always
     build:
       context: .
